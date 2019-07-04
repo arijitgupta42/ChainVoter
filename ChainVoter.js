@@ -1,6 +1,6 @@
 const SHA256 = require('crypto-js/sha256');
 
-
+//creating block for each vote counted with details of voter
 class Block{
 	constructor(fromVoterID, fromName, fromAadhaar, toParty, consitutency, votes,previousHash=''){
 		this.fromVoterID = fromVoterID;
@@ -15,10 +15,12 @@ class Block{
     	
 	}
 
+	//calculating hash for each vote
 	calculateHash(){
 		return SHA256(this.fromAadhaar + this.fromName + this.fromVoterID + this.toParty + this.timestamp + this.previousHash + this.nonce).toString();
 	}
 
+	//mining the vote based on difficulty
 	mineBlock(difficulty){
 		while(this.hash.substring(0, difficulty) !== Array(difficulty + 1).join("0")){
 			this.nonce++;
@@ -30,25 +32,30 @@ class Block{
 }
 
 class Blockchain{
+	//default constructor that initiates genesis block creation function
 	constructor(){
 		this.chain = [this.createGenesisBlock()];
 		this.difficulty = 2;
 	}
 
+	//function that creates genesis block
 	createGenesisBlock(){
 		return new Block(null);
 	}
 
+	//returns the last vote added to the blockchain
 	getLatestBlock(){
 		return this.chain[this.chain.length - 1];
 	}
 
+	//adds a new vote to the blockchain and links the previous block to it
 	addBlock(newBlock){
 		newBlock.previousHash = this.getLatestBlock().hash;
 		newBlock.mineBlock(this.difficulty);
 		this.chain.push(newBlock);
 	} 
 
+	//checking if the blockchain has been tampered at any stage
 	isChainValid(){
 		for( let i=1; i<this.chain.length;i++){
 			const currentBlock = this.chain[i];
@@ -68,6 +75,6 @@ class Blockchain{
 }
 
 
+//making these classes available for use in other files
 module.exports.Blockchain = Blockchain;
 module.exports.Block = Block;
-
