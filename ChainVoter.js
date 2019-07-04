@@ -2,13 +2,13 @@ const SHA256 = require('crypto-js/sha256');
 
 
 class Block{
-	constructor(name,votedTo,constituency,aadhaar,voterId,previousHash=''){
-		this.timestamp = Date.now();
-		this.name = name;
-		this.votedTo = votedTo;
+	constructor(fromVoterID, fromName, fromAadhaar, toParty, consitutency, votes,previousHash=''){
+		this.fromVoterID = fromVoterID;
+		this.fromName = fromName;
+		this.fromAadhaar = fromAadhaar;
+		this.toParty = toParty;
 		this.constituency = constituency;
-		this.aadhaar = aadhaar;
-		this.voterId = voterId;
+		this.timestamp = Date.now();
 		this.previousHash = previousHash;
 		this.hash = this.calculateHash();
 		this.nonce = 0;
@@ -16,7 +16,7 @@ class Block{
 	}
 
 	calculateHash(){
-		return SHA256(this.votedto + this.timestamp + this.previousHash + this.constituency + this.name + this.aadhaar + this.voterid + this.nonce).toString();
+		return SHA256(this.fromAadhaar + this.fromName + this.fromVoterID + this.toParty + this.timestamp + this.previousHash + this.nonce).toString();
 	}
 
 	mineBlock(difficulty){
@@ -67,16 +67,7 @@ class Blockchain{
 	}
 }
 
-let Chockblain = new Blockchain();
 
-console.log("Mining block 1......");
-Chockblain.addBlock(new Block());
-
-console.log("Mining block 2......");
-Chockblain.addBlock(new Block());
-
-console.log("Mining block 3......");
-Chockblain.addBlock(new Block());
-
-console.log(Chockblain);
+module.exports.Blockchain = Blockchain;
+module.exports.Block = Block;
 
