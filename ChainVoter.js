@@ -23,6 +23,11 @@ class Block{
 		return SHA256(this.fromAadhaar + this.fromName + this.fromVoterID + this.toParty + this.timestamp + this.publicKey + this.previousHash + this.nonce).toString();
 	}
 
+	//calculating hash for signing purpose
+	calculateHashSig(){
+		return SHA256(this.fromAadhaar + this.fromName + this.fromVoterID + this.toParty + this.publicKey).toString();
+	}
+
 	//mining the vote based on difficulty
 	mineBlock(difficulty){
 		while(this.hash.substring(0, difficulty) !== Array(difficulty + 1).join("0")){
@@ -37,7 +42,7 @@ class Block{
 			throw new Error('You cannot vote from other devices! ');
 
 		}
-		const hashVt = this.calculateHash();
+		const hashVt = this.calculateHashSig();
 		const sig = signingKey.sign(hashVt,'base64');
 		this.signature = sig.toDER('hex');
 	}
@@ -48,11 +53,10 @@ class Block{
 			return false;
 		}
 		if(!this.signature || this.signature.length === 0){		//must be signed
-			throw new Error('No signature in this transaction');
+			throw new Error('No signature in this vote!');
 		}
 		const keyPub = ec.keyFromPublic(this.publicKey,'hex');
-		return keyPub.verify(this.calculateHash(),this.signature);    //!!!! returning false while it should be true
-
+		return keyPub.verify(this.calculateHashSig(),this.signature);    
 	}
 }
 
@@ -65,7 +69,7 @@ class Blockchain{
 
 	//function that creates genesis block
 	createGenesisBlock(){
-		return new Block(null);
+		return new Block('Genesis Block', null,null,null,null);
 	}
 
 	//returns the last vote added to the blockchain
