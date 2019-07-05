@@ -38,9 +38,9 @@ Before the addition of a new block, it will be verified if the user has already 
 
 # Technology/Hardware Used :
 
-JavaScript for coding
-Microsoft Azure for implementing the blockchain
-Fingerprint Scanner
+1. JavaScript for coding
+2. Microsoft Azure for implementing the blockchain
+3. Fingerprint Scanner
 
 # Expected Result :
 This app will make voting a more transparent and reliable process. This will allow voters to vote even without being physically present in their constituencies. Also, it will help in improving the database of the government. Our app will allow users to cast their vote from the comfort of their homes.
