@@ -1,0 +1,13 @@
+{
+  "name": "ChainVoter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "crypto-js": "^3.1.9-1"
+    "elliptic": "6.4.1"
+  }
+}
+© 2019 GitHub,
