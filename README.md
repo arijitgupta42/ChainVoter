@@ -45,7 +45,7 @@ Before the addition of a new block, it will be verified if the user has already 
 # Expected Result :
 This app will make voting a more transparent and reliable process. This will allow voters to vote even without being physically present in their constituencies. Also, it will help in improving the database of the government. Our app will allow users to cast their vote from the comfort of their homes.
 
-#Team Members
-Ameya Laad
-Arijit Gupta
+# Team Members: 
+Ameya Laad,
+Arijit Gupta,
 Parth Agrawal
