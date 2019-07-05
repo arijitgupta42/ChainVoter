@@ -2,22 +2,42 @@ const {Blockchain,Block} = require('./chainvoter');
 const EC = require('elliptic').ec;
 const ec = new EC('secp256k1');
 
-const key = ec.keyFromPrivate('4429c86623f262dd0a6e432e51136a24324466f9b8f11b28ccdfefde256784fd');
-let election = new Blockchain();
-const voter1 = new Block('voterID','MyName','Aadhaar','NOTA','Kanpur',key.getPublic('hex'),0)
-voter1.signVote(key);
-election.addBlock(voter1);
-//console.log(voter1.isValid());
-console.log('\nVoting...\n');
-console.log(election.isChainValid());
+const key1 = ec.keyFromPrivate('a3881e6a35000cf9152935aaae96dddc2f40ca3c5015bd11e97ea4f7dbbb72ea');
+publicKey1= key1.getPublic('hex');
 
-/*let savejeeCoin = new Blockchain();
-const tx1 = new Transaction(myWalletAddress,'public key goes here',10);
-tx1.signTransaction(myKey);
-savejeeCoin.addTransaction(tx1);
-console.log('\n Starting the miner...');
-savejeeCoin.minePendingTransactions(myWalletAddress);
-console.log('\nBalance of xavier is', savejeeCoin.getBalanceOfAddress(myWalletAddress));
-savejeeCoin.chain[1].transactions[0].amount=10;
-console.log('Is chain valid? ', savejeeCoin.isChainValid());
-//console.log(savejeeCoin.chain[1].transactions);*/
+const key2 = ec.keyFromPrivate('a3781e6a35000cf9152935aaae96dddc2f40ca3c5015bd11e97ea4f7dbbb72ea');
+publicKey2= key2.getPublic('hex');
+
+let election = new Blockchain();
+const voter1 = new Block('voterID','MyName','Aadhaar','NOTA','Kanpur',publicKey1,0)
+voter1.signVote(key1);
+
+election.addBlock(voter1);
+
+console.log(voter1.isValid());
+console.log('Voting...');
+console.log("Voter 1 has voted successfully!")
+
+const voter2 = new Block('voterID','MyName','Aadhaar','NOTA','Delhi',publicKey2,0)
+voter2.signVote(key2);
+
+election.addBlock(voter2);
+console.log(voter2.isValid());
+console.log('Voting...');
+console.log("Voter 2 has voted successfully");
+
+//on un-commenting the code below it can be seen that on a duplicate signature block isn't added to the chain
+
+/*const voter3 = new Block('voterID','MyName','Aadhaar','NOTA','Pune',publicKey1,0)
+voter3.signVote(key1);
+
+election.addBlock(voter3);
+console.log(voter3.isValid());
+console.log('Voting...');
+console.log("Voter 3 has voted successfully");
+
+
+console.log(election.isChainValid());
+*/
+
+console.log(election);
