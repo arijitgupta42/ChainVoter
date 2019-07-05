@@ -34,7 +34,7 @@ class Block{
 	}
 	signVote(signingKey){
 		if(signingKey.getPublic('hex')!== this.publicKey){
-			throw new Error('You cannot sign transactions for other wallets! ');
+			throw new Error('You cannot vote from other devices! ');
 
 		}
 		const hashVt = this.calculateHash();
