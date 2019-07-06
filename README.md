@@ -14,13 +14,13 @@ Our main aim is to make sure that every eligible resident of the country gets to
 
 Other than this, our mission is to make this process as transparent as possible so that all issues can be traced back to and handled at the source. We want to eradicate any cases of people not being there on the voters list, or not being able to vote from a different constituency, or claiming that their vote did not go to who they voted for.
 
-With our solution people will not be required to stand in line at polling booths and will even be able to vote from outside their constituency as long as they have their aadhaar and Voter ID detials at hand. To get started with our application people will simply need to go to the website and register themselves there on the eve of election day. Then on election day they can simply login with their unique details and cast their vote comfortably.
+With our solution people will not be required to stand in line at polling booths and will even be able to vote from outside their constituency as long as they have their aadhaar and Voter ID details at hand. To get started with our application people will simply need to go to the website and register themselves there on the eve of election day. Then on election day they can simply login with their unique details and cast their vote comfortably.
 
 # Features :
 
 Creation of block using MAC ID, User ID(containing Name, Aadhaar, Voter ID, and scanned fingerprints after verification from https://data.gov.in/ ), Voter ID(votedFor,constituency) and hash.
 
-4 logins per MAC ID to account for failed voting due to internet failure. This may also be used for family members using the same mobile phone to vote.
+4 logins per MAC ID to account for failed voting due to internet failure. These logins may also be used for family members, like senior citizens, using the same mobile phone to vote.
 
 Time limit of 5 minutes within which the user needs to cast his/her vote, failing which he/she will be logged out.
 
@@ -30,7 +30,7 @@ Before addition of block in the chain, verification if the user has already vote
 # Countermeasures :
 
 1. Organising booths with master devices installed for people with inadequate hardware/internet connectivity.
-2. An emergency button for people being made to vote-by-force, which blocks the MAC ID.
+2. An emergency button for people being made to vote-by-force, which actually blocks the MAC ID but still gives the impression that vote has been cast.
 3. Redirecting people without Voter ID or Aadhaar to registration websites.
 
 
