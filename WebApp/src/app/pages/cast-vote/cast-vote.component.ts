@@ -11,10 +11,13 @@ import { Block } from 'ChainVoter/ChainVoter'
 export class CastVoteComponent implements OnInit {
 
   public newVt;
+  public voterKeyPublic;
   public voterKey;
 
   constructor(private blockchainService: BlockchainService) {
-  	this.voterKey = blockchainService.voterKeys;
+  	this.voterKeyPublic = blockchainService.voterKeyspublic;
+    this.voterKey = blockchainService.voterKeys;
+    console.log(this.voterKey);
 
    }
 
@@ -26,8 +29,8 @@ export class CastVoteComponent implements OnInit {
 
   createVoter(){
     console.log(this.newVt);	
-  	this.newVt.publicKey = this.voterKey.keyObj.getPublic('hex');
-  	this.newVt.signVote(this.voterKey.keyObj);
+  	this.newVt.publicKey = this.voterKeyPublic;
+  	this.newVt.signVote(this.voterKey);
 
 
     this.blockchainService.blockchainInstance.addBlock(this.newVt); 

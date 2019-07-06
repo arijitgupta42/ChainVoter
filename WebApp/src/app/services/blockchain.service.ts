@@ -8,7 +8,10 @@ import EC from "elliptic";
 export class BlockchainService {
 
   public blockchainInstance = new Blockchain();
-  public voterKeys = [];
+  public voterKeyspublic;
+  private voterKeysprivate;
+  public voterKeys;
+
 
   constructor() {
   	this.blockchainInstance.difficulty = 1;
@@ -23,15 +26,19 @@ export class BlockchainService {
 
 
    private generateVoterKeys(){
-   	const ec = new EC.ec("secp256k1");
-   	const key = ec.genKeyPair();
+   	 const ec = new EC.ec("secp256k1");
+   	 const key = ec.genKeyPair();
+     this.voterKeyspublic = key.getPublic('hex');
+     this.voterKeysprivate = key.getPublic('hex');
+     this.voterKeys = key;
 
 
-   	this.voterKeys.push({
-   		keyObj: key,
-   		publicKey: key.getPublic('hex'),
-   		privateKey: key.getPrivate('hex'),
-   	});
+
+    /*this.voterKeys.push({
+   	 keyObj: key,
+   	 publicKey: key.getPublic('hex'),
+   	 privateKey: key.getPrivate('hex'),
+    })*/
   }
 }
 
