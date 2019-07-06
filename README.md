@@ -10,17 +10,21 @@ Elections and the voting process using EVMs has been under criticism for being b
 
 In this project we are trying to make the electronic voting/polling process in the elections a smoother sail for everyone involved in it, by using Azure Blockchain to make things more secure, transparent, reliable and effective.
 
-This app will allow users to cast their vote from anywhere easily.
+Our main aim is to make sure that every eligible resident of the country gets to vote with minimal effort on their part (other than the effort of deciding who to vote for) so that people can wield one of the most important rights they have in a democracy. We want to make sure that everyone gets to vote, gets to vote for whoever they want and gets the assurance that their vote is going to the right place.
+
+Other than this, our mission is to make this process as transparent as possible so that all issues can be traced back to and handled at the source. We want to eradicate any cases of people not being there on the voters list, or not being able to vote from a different constituency, or claiming that their vote did not go to who they voted for.
+
+With our solution people will not be required to stand in line at polling booths and will even be able to vote from outside their constituency as long as they have their aadhaar and Voter ID detials at hand. To get started with our application people will simply need to go to the website and register themselves there on the eve of election day. Then on election day they can simply login with their unique details and cast their vote comfortably.
 
 # Features :
 
-Creation of block using MAC ID, User ID(containing Name, Aadhaar, Voter ID, and scanned fingerprints after verification), Voter ID(votedFor,constituency) and hash.
+Creation of block using MAC ID, User ID(containing Name, Aadhaar, Voter ID, and scanned fingerprints after verification from https://data.gov.in/ ), Voter ID(votedFor,constituency) and hash.
 
-4 logins per MAC ID to account for failed voting due to internet failure.
+4 logins per MAC ID to account for failed voting due to internet failure. This may also be used for family members using the same mobile phone to vote.
 
-Time limit of 5 minutes within which the user needs to cast his/her vote. 
+Time limit of 5 minutes within which the user needs to cast his/her vote, failing which he/she will be logged out.
 
-Before addition of block in the chain, verification if the user has already voted.
+Before addition of block in the chain, verification if the user has already voted or not.
 
 
 # Countermeasures :
