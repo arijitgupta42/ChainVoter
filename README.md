@@ -41,6 +41,7 @@ Before the addition of a new block, it will be verified if the user has already 
 1. JavaScript for coding
 2. Microsoft Azure for implementing the blockchain
 3. Fingerprint Scanner
+4. Ionic v3 and Cordova for mobile app design
 
 # Expected Result :
 This app will make voting a more transparent and reliable process. This will allow voters to vote even without being physically present in their constituencies. Also, it will help in improving the database of the government. Our app will allow users to cast their vote from the comfort of their homes.
