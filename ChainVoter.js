@@ -127,8 +127,6 @@ class Blockchain{
 		return true;
 	}
 }
-
-
 //making these classes available for use in other files
 module.exports.Blockchain = Blockchain;
 module.exports.Block = Block;

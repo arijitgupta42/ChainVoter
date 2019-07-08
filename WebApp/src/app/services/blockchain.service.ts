@@ -6,18 +6,27 @@ import EC from "elliptic";
   providedIn: 'root'
 })
 export class BlockchainService {
+  username: string;
+  password: string;
 
   public blockchainInstance = new Blockchain();
-  public voterKeyspublic;
-  private voterKeysprivate;
-  public voterKeys;
+  
 
 
   constructor() {
+
   	this.blockchainInstance.difficulty = 1;
+    this.username = prompt("Please enter your username");
+    if(this.username == null || this.username == ""){
+     alert("You must enter a username");
+     } else{
+     this.password = prompt("Please enter your password");
+     }
+     if(this.username !== 'admin' || this.password !== "admin"){
+       alert("As you are not an admin you will not be able to access details");
+     }
 
-  	this.generateVoterKeys();
-
+  	
    }
 
    getBlocks(){
@@ -25,13 +34,7 @@ export class BlockchainService {
    }
 
 
-   private generateVoterKeys(){
-   	 const ec = new EC.ec("secp256k1");
-   	 const key = ec.genKeyPair();
-     this.voterKeyspublic = key.getPublic('hex');
-     this.voterKeysprivate = key.getPublic('hex');
-     this.voterKeys = key;
-
+  
 
 
     /*this.voterKeys.push({
@@ -40,7 +43,6 @@ export class BlockchainService {
    	 privateKey: key.getPrivate('hex'),
     })*/
   }
-}
 
 
 

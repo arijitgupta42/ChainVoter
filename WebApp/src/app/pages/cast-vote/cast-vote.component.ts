@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BlockchainService } from 'src/app/services/blockchain.service'
 import { Block } from 'ChainVoter/ChainVoter'
+import { LoginComponent } from 'src/app/components/login/login.component'
 
 
 @Component({
@@ -14,9 +15,9 @@ export class CastVoteComponent implements OnInit {
   public voterKeyPublic;
   public voterKey;
 
-  constructor(private blockchainService: BlockchainService) {
-  	this.voterKeyPublic = blockchainService.voterKeyspublic;
-    this.voterKey = blockchainService.voterKeys;
+  constructor(private loginComponent: LoginComponent) {
+  	this.voterKeyPublic = loginComponent.voterKeyspublic;
+    this.voterKey = loginComponent.voterKeys;
     console.log(this.voterKey);
 
    }
@@ -33,7 +34,7 @@ export class CastVoteComponent implements OnInit {
   	this.newVt.signVote(this.voterKey);
 
 
-    this.blockchainService.blockchainInstance.addBlock(this.newVt); 
+    this.loginComponent.blockchainService.blockchainInstance.addBlock(this.newVt); 
     
     this.newVt = new Block(); 	
 
