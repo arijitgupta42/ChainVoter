@@ -34,7 +34,7 @@ Before addition of block in the chain, verification if the user has already vote
 3. Redirecting people without Voter ID or Aadhaar to registration websites.
 
 
-# Team Chockblain Members: 
+# Team Members: 
 Ameya Laad,
 Arijit Gupta,
 Parth Agrawal
