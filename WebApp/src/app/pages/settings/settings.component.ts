@@ -8,7 +8,7 @@ import { BlockchainService } from 'src/app/services/blockchain.service'
 })
 export class SettingsComponent implements OnInit {
 
-  constructor(private blockchainService: BlockchainService) {
+  constructor(public blockchainService: BlockchainService) {
   	this.blockchainService = blockchainService.blockchainInstance;
 
    }

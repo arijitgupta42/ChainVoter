@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
   username: string;
   password: string;
 
-   private generateVoterKeys(){
+   public generateVoterKeys(){
    	 const ec = new EC.ec("secp256k1");
    	 const key = ec.genKeyPair();
      this.voterKeyspublic = key.getPublic('hex');

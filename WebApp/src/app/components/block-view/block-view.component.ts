@@ -21,7 +21,7 @@ export class BlockViewComponent implements OnInit {
   		
   }
 
-  private showDetails(){
+  public showDetails(){
   	
   	 if(this.blockchainService.username == "admin" && this.blockchainService.password == "admin"){
 

@@ -10,6 +10,7 @@ export class BlockchainService {
   password: string;
 
   public blockchainInstance = new Blockchain();
+  public difficulty = this.blockchainInstance.difficulty;
   
 
 
