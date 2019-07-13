@@ -1,0 +1,13 @@
+﻿<div class="col-md-6 col-md-offset-3">
+    <h2>Hi {{currentUser.username}}!</h2>
+    <h4>You're logged in to ChainVoter</h4>
+    <p>All registered users:</p>
+    <ul>
+        <li *ngFor="let user of users">
+            {{user.username}} ({{user.password}})
+            - <a (click)="deleteUser(user.id)">Delete</a>
+        </li>
+    </ul>
+    <p><a class="btn btn-danger" [routerLink]="['/login']">Logout</a> <a class="btn btn-primary" href="http://localhost:4200/vote">Cast Vote</a></p>
+
+</div>

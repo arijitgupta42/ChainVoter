@@ -1,0 +1,16 @@
+@import '~@angular/material/theming';
+@import "super-styles";
+
+
+@include mat-core()
+
+
+$candy-app-primary: mat-palette($darkblue, A400);
+$candy-app-accent:  mat-palette($orange, A400);
+
+
+$candy-app-warn:    mat-palette($alert);
+$candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-app-warn);
+
+
+@include angular-material-theme($candy-app-theme);

@@ -1,0 +1,353 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "ChainVoter": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "src/favicon.ico",
+              "src/image.png",
+              "src/assets"
+
+            ],
+            "styles": [
+              "src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ChainVoter:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ChainVoter:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ChainVoter:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/test.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
+            "assets": [
+              "src/favicon.ico",
+              "src/image.png",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "tsconfig.app.json",
+              "tsconfig.spec.json",
+              "e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "e2e/protractor.conf.js",
+            "devServerTarget": "ChainVoter:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ChainVoter:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "LoginPageBeta": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/LoginPageBeta",
+      "sourceRoot": "projects/LoginPageBeta/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/LoginPageBeta",
+            "index": "projects/LoginPageBeta/src/index.html",
+            "main": "projects/LoginPageBeta/src/main.ts",
+            "polyfills": "projects/LoginPageBeta/src/polyfills.ts",
+            "tsConfig": "projects/LoginPageBeta/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/LoginPageBeta/src/favicon.ico",
+              "projects/LoginPageBeta/src/assets"
+            ],
+            "styles": [
+              "projects/LoginPageBeta/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/LoginPageBeta/src/environments/environment.ts",
+                  "with": "projects/LoginPageBeta/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "LoginPageBeta:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "LoginPageBeta:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "LoginPageBeta:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/LoginPageBeta/src/test.ts",
+            "polyfills": "projects/LoginPageBeta/src/polyfills.ts",
+            "tsConfig": "projects/LoginPageBeta/tsconfig.spec.json",
+            "karmaConfig": "projects/LoginPageBeta/karma.conf.js",
+            "assets": [
+              "projects/LoginPageBeta/src/favicon.ico",
+              "projects/LoginPageBeta/src/assets"
+            ],
+            "styles": [
+              "projects/LoginPageBeta/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/LoginPageBeta/tsconfig.app.json",
+              "projects/LoginPageBeta/tsconfig.spec.json",
+              "projects/LoginPageBeta/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/LoginPageBeta/e2e/protractor.conf.js",
+            "devServerTarget": "LoginPageBeta:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "LoginPageBeta:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "LoginPage": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/LoginPage",
+      "sourceRoot": "projects/LoginPage/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/LoginPage",
+            "index": "projects/LoginPage/src/index.html",
+            "main": "projects/LoginPage/src/main.ts",
+            "polyfills": "projects/LoginPage/src/polyfills.ts",
+            "tsConfig": "projects/LoginPage/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/LoginPage/src/favicon.ico",
+              "projects/LoginPage/src/assets"
+            ],
+            "styles": [
+              "projects/LoginPage/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/LoginPage/src/environments/environment.ts",
+                  "with": "projects/LoginPage/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "LoginPage:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "LoginPage:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "LoginPage:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/LoginPage/src/test.ts",
+            "polyfills": "projects/LoginPage/src/polyfills.ts",
+            "tsConfig": "projects/LoginPage/tsconfig.spec.json",
+            "karmaConfig": "projects/LoginPage/karma.conf.js",
+            "assets": [
+              "projects/LoginPage/src/favicon.ico",
+              "projects/LoginPage/src/assets"
+            ],
+            "styles": [
+              "projects/LoginPage/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/LoginPage/tsconfig.app.json",
+              "projects/LoginPage/tsconfig.spec.json",
+              "projects/LoginPage/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/LoginPage/e2e/protractor.conf.js",
+            "devServerTarget": "LoginPage:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "LoginPage:serve:production"
+            }
+          }
+        }
+      }
+    }},
+  "defaultProject": "ChainVoter"
+}
