@@ -40,4 +40,6 @@ Before addition of block in the chain, verification if the user has already vote
 Ameya Laad,
 Arijit Gupta,
 Parth Agrawal
+
+
 P.S. The WebApp has seperate README on how to run it on your device
