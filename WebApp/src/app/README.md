@@ -1,1 +1,0 @@
-initializig app folder
