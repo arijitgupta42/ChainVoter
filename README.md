@@ -18,11 +18,11 @@ With our solution people will not be required to stand in line at polling booths
 
 # Features :
 
-Creation of block using MAC ID, User ID(containing Name, Party, Constituency, Aadhaar, Voter ID, and scanned fingerprints after verification from https://data.gov.in/ ), Signature(Name, Aadhaar, Voter ID) and hashing them.
+Creation of block using Cookies, User ID(containing Name, Party, Constituency, Aadhaar, Voter ID, and scanned fingerprints after verification from https://data.gov.in/ ), Signature(Name, Aadhaar, Voter ID) and hashing them.
 
 Two factor authentication of voters using face recognition with Microsoft Face API and MongoDB database.
 
-4 logins per MAC ID to account for failed voting due to internet failure. These logins may also be used for family members, like senior citizens, using the same mobile phone to vote.
+4 logins per device( recognized using cookies) to account for failed voting due to internet failure. These logins may also be used for family members, like senior citizens, using the same mobile phone to vote.
 
 Time limit of 5 minutes within which the user needs to cast his/her vote, failing which he/she will be logged out.
 
