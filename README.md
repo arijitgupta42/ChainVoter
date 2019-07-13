@@ -41,4 +41,3 @@ Ameya Laad,
 Arijit Gupta,
 Parth Agrawal
 
-P.S. Enter username and password (whatever you wish) if you want to access the site!
