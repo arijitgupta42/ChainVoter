@@ -30,7 +30,7 @@ Before addition of block in the chain, verification if the user has already vote
 # Countermeasures :
 
 1. Organising booths with master devices installed for people with inadequate hardware/internet connectivity.
-2. An emergency button for people being made to vote-by-force, which actually blocks the MAC ID but still gives the impression that vote has been cast.
+2. An emergency button for people being made to vote-by-force, which actually blocks the vote but still gives the impression that vote has been cast.
 3. Redirecting people without Voter ID or Aadhaar to registration websites.
 
 
