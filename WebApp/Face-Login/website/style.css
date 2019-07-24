@@ -1,0 +1,96 @@
+body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%; 
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color:#e39a3b;
+  padding-top:0em;
+  background-color: white;
+  background-image: url(wallpaper.jpg)
+
+}
+
+.blix{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#camera, #camera--view, #camera--sensor, #camera--output{
+    position: fixed;
+    height: 450px;
+    width: 450px;
+    object-fit: cover;
+    
+}
+#camera--view, #camera--sensor, #camera--output{
+    transform: scaleX(-1);
+    filter: FlipH;
+    bottom: 90px;
+    left:  540px;
+
+}
+
+#camera--view{
+   border: ridge 3px black;
+}
+#camera--trigger{
+    width: 200px;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    border-radius: 30px;
+    border: none;
+    padding: 15px 20px;
+    text-align: center;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    position: fixed;
+    bottom: 30px;
+    left: 520px;
+  }
+
+#camera--login{
+    width: 200px;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    border-radius: 30px;
+    border: none;
+    padding: 15px 20px;
+    text-align: center;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+    position: fixed;
+    bottom: 30px;
+    left: 800px;
+}
+.taken{
+    height: 100px!important;
+    width: 100px!important;
+    transition: all 0.5s ease-in;
+    border: dotted 1.5px black;
+    
+    top: 182.5px;
+    margin-left: 450px;
+    z-index: 2;
+}
+
+.card{
+  display: flex;
+  justify-content: center;
+  align-items: top;
+}
+
+
+@-webkit-keyframes name {
+    0% {color:#e39a3b;}
+    100% {color:#0080FF;}
+
+}
+
+
+.wrap{
+  -webkit-animation:name 1s infinite;
+}
+
