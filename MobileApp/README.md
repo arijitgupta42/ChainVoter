@@ -15,7 +15,7 @@ You will need to install ionic cli, loopback(3.x), nodejs and cordova (below ver
 
 Please also install the android platform on cordova.
 
-# IMPORTANT: Please make sure your mobile and the mongoDb server are on the smae network.
+# IMPORTANT: Please make sure your mobile and the mongoDb server are on the same network.
 
 # Environment info:
 cli packages: (C:\Users\ameya\AppData\Roaming\npm\node_modules)
