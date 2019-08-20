@@ -1,0 +1,2 @@
+cd Chockblain
+ionic serve

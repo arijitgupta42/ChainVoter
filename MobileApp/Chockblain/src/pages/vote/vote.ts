@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {IonicPage, NavController, NavParams, ToastController} from 'ionic-angular';
 import { FormGroup, FormBuilder, Validators} from "@angular/forms";
 import {Blockchain} from "../../providers/BlockChain";
 import {Block} from "../../providers/Block";
@@ -24,23 +24,17 @@ var ec = new EC('secp256k1');
 })
 export class VotePage {
 
-  voterForm: FormGroup;
   voterId:string;
   voteTo: string;
   constituency: string;
   voterKey: any;
   newVote= new Block(null, null, null, null, null, null, '', '');
   userInstance: AppUser;
+  blockChainInstance: Blockchain;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, public blockChainInstance: Blockchain) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder,public toastCtrl: ToastController) {
     this.userInstance=navParams.get('user');
-
-
-    this.voterForm = formBuilder.group({
-      voterID: ['', Validators.required],
-      voteTo: ['', Validators.required],
-      constituency: ['', Validators.required]
-    });
+    this.blockChainInstance=this.navParams.get('bcInstance');
   }
 
   ionViewDidLoad() {
@@ -59,6 +53,14 @@ export class VotePage {
     this.blockChainInstance.addBlock(this.newVote);
 
     this.newVote = new Block(null, null, null, null, null, null, '','');
+
+    let toast = this.toastCtrl.create({
+      message: 'You have successfully cast vote',
+      duration: 2000
+    });
+    toast.present();
+
+    this.navCtrl.push('HomePage');
   }
 
 }
