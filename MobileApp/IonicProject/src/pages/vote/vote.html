@@ -1,0 +1,53 @@
+<!--
+  Generated template for the VotePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Vote</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <ion-list>
+      <ion-item>
+        <ion-label stacked>VoterID:</ion-label>
+        <ion-input [(ngModel)]="voterId"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Aadhar Number:</ion-label>
+        <ion-input [(ngModel)]="userInstance.aadhar" disabled></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Full Name:</ion-label>
+        <ion-input [(ngModel)]="userInstance.name" disabled></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Vote To Party:</ion-label>
+        <ion-select [(ngModel)]="voteTo">
+          <ion-option>Option 1</ion-option>
+          <ion-option>Option 2</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>From Constituency:</ion-label>
+        <ion-select [(ngModel)]="constituency">
+          <ion-option>Option 1</ion-option>
+          <ion-option>Option 2</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar position="bottom">
+    <button ion-button block (click)="submitVote()" [disabled]="voterId==undefined||constituency==undefined||voteTo==undefined">Submit Vote</button>
+  </ion-toolbar>
+</ion-footer>

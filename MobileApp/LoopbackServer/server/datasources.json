@@ -1,0 +1,13 @@
+{
+  "users": {
+    "host": "localhost",
+    "port": 27017,
+    "url": "",
+    "database": "userdb",
+    "password": "",
+    "name": "users",
+    "user": "",
+    "useNewUrlParser": true,
+    "connector": "mongodb"
+  }
+}
