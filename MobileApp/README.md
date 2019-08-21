@@ -1,7 +1,10 @@
-#Info
+# Info
 the chockblain folder is the mobile application ionic folder
+
 the chockblain-users folder is the loopback folder
+
 the three batch files need to be edited and run in the following order:
+
 1. server.bat: change the paths to the respective paths of mongod and the data directory
 2. loopback.bat: this will start the loopback-api client
 3. serve.bat: this will run the ionic program on the browser //not required
@@ -9,11 +12,12 @@ the three batch files need to be edited and run in the following order:
 
 # Use
 You will need to install ionic cli, loopback(3.x), nodejs and cordova (below versions) for the program to run.
+
 Please also install the android platform on cordova.
 
-#IMPORTANT: Please make sure your mobile and the mongoDb server are on the smae network.
+# IMPORTANT: Please make sure your mobile and the mongoDb server are on the same network.
 
-#Environment info:
+# Environment info:
 cli packages: (C:\Users\ameya\AppData\Roaming\npm\node_modules)
 
     @ionic/cli-utils  : 1.19.3
