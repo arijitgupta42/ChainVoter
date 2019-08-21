@@ -56,7 +56,7 @@ export class VotePage {
 
     let toast = this.toastCtrl.create({
       message: 'You have successfully cast vote',
-      duration: 2000
+      duration: 5000
     });
     toast.present();
 

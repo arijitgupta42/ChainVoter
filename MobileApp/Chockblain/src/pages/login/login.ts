@@ -96,10 +96,16 @@ export class LoginPage {
     let voterKey= ec.genKeyPair();
     this.userInstance.publicKey=voterKey.getPublic('hex');
     this.userInstance.privateKey=voterKey.getPrivate('hex');
+
+    let loading=this.ldngCtrl.create({
+      content: "Please wait, registering user"
+    });
+    loading.present();
     //register in db
     this.appUserApi.create<AppUser>(this.userInstance).toPromise()
       .then(data => {
         console.log(data);
+        loading.dismiss();
         this.userInstance = new AppUser();
         let alert = this.alertCtrl.create({
           title: "Success",
@@ -111,9 +117,10 @@ export class LoginPage {
         this.regFace=false;
       }, err => {
         console.log(err);
+        loading.dismiss();
         let toast = this.toastCtrl.create({
           message: 'Error: ' + err,
-          duration: 2000
+          duration: 5000
         });
         toast.present();
       });
@@ -126,9 +133,21 @@ export class LoginPage {
       .then(data => {
         console.log(data);
         this.userInstance.faceID=data['faceID'];
+        this.userInstance.name=data['name'];
+        this.userInstance.id=data['id'];
+        this.userInstance.publicKey=data['publicKey'];
+        this.userInstance.privateKey=data['privateKey'];
+        this.userInstance.username=data['username']; //not used
+
         this.verifyFaceProcess();
       }, err => {
         console.log(err);
+        let toast = this.toastCtrl.create({
+          message: 'Error: Could not find user. Please register.',
+          duration: 5000
+        });
+        toast.present();
+
       })
   }
 
@@ -242,7 +261,7 @@ export class LoginPage {
         } else {
           let toast = this.toastCtrl.create({
             message: 'Error: Could not verify face',
-            duration: 2000
+            duration: 5000
           });
           toast.present();
         }

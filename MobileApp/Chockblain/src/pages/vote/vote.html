@@ -17,16 +17,16 @@
 
     <ion-list>
       <ion-item>
+        <ion-label stacked>Full Name:</ion-label>
+        <ion-input [(ngModel)]="userInstance.name" disabled></ion-input>
+      </ion-item>
+      <ion-item>
         <ion-label stacked>VoterID:</ion-label>
         <ion-input [(ngModel)]="voterId"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label stacked>Aadhar Number:</ion-label>
         <ion-input [(ngModel)]="userInstance.aadhar" disabled></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label stacked>Full Name:</ion-label>
-        <ion-input [(ngModel)]="userInstance.name" disabled></ion-input>
       </ion-item>
       <ion-item>
         <ion-label stacked>Vote To Party:</ion-label>
