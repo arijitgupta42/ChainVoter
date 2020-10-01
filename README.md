@@ -1,6 +1,9 @@
 # ChainVoter
 (Solution for Codefundo++ 2019)
 
+# Update :
+Rank 3 in BITS Goa in Codefundo++ 2019
+
 Codefundo 2019:
 Secure Voting Process using Azure Blockchain.
 
