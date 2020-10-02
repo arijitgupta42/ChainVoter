@@ -39,4 +39,4 @@ Ameya Laad,
 Arijit Gupta,
 Parth Agrawal
 
-P.S. The WebApp has seperate README on how to run it on your device
+P.S. The WebApp and Mobile App have seperate READMEs on how to run it on your device
